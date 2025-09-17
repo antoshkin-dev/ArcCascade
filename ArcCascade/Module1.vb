@@ -178,7 +178,12 @@ Module Module1
         RunRar = StartupPath & "\rar.exe  a -m3 -ep -y -inul " & DeleteKey & Chr(34) & DestinationFile & Chr(34) & " " & Chr(34) & FileForArc & Chr(34)
         AddLog("RARing " & FileForArc)
         If ViewOnly = False Then
-            Call Shell(RunRar, AppWinStyle.Hide, True)
+            Try
+                Call Shell(RunRar, AppWinStyle.Hide, True)
+            Catch
+                AddLog("Ошибка запуска утилиты архивации rar.exe. Убедитесь, что утилита размещена в каталоге с приложением ArcCascade")
+                End
+            End Try
             'Прибавляем размер запакованого файла к итоговой сумме
             Try
                 If (File.Exists(DestinationFile)) Then
