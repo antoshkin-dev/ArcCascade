@@ -33,15 +33,15 @@ c:\
 			config.xml
 ```
 Команда:  
-`ArcCascade.exe /pf c:\solutions\logs /delete`  
+`ArcCascade.exe /pf c:\solutions\logs /delete /fm *.log`  
 Результат:
 ```
 c:\
 	solutions\
 		logs\
-			1.rar
-			2.rar
-			3.rar
+			1.log.rar
+			2.log.rar
+			3.log.rar
 			config.xml
 ```
 
@@ -60,20 +60,20 @@ c:\
 			config.xml
 ```
 Команда:  
-`ArcCascade.exe /pf c:\solutions`  
+`ArcCascade.exe /pf c:\solutions` /fm *.xml  
 Результат:
 ```
 c:\
 	solutions\
 		config\
 			main.xml
-			main.rar
+			main.xml.rar
 			misc.xml
-			misc.rar
+			misc.xml.rar
 		logs\
 			1.log
 			2.log
 			3.log
 			config.xml
-			config.rar
+			config.xml.rar
 ```
